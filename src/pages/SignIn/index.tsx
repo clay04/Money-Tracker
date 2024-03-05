@@ -50,6 +50,7 @@ const SignIn = ({navigation}) => {
         <TextInput
           style={styles.input}
           placeholder="Type your email address"
+          placeholderTextColor={'#8D92A3'}
           keyboardType="email-address"
           autoCapitalize="none"
           value={email}
@@ -58,6 +59,7 @@ const SignIn = ({navigation}) => {
         <Text style={styles.textInput}>Password</Text>
         <TextInput
           placeholder="Type your password"
+          placeholderTextColor={'#8D92A3'}
           style={styles.input}
           autoCapitalize="none"
           secureTextEntry={true}
@@ -77,7 +79,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 30,
-    fontFamily: 'Poppins',
   },
 
   text2: {
@@ -85,6 +86,7 @@ const styles = StyleSheet.create({
     color: '#020202',
     fontWeight: '500',
     marginBottom: 100,
+    fontFamily: "Poppins-Medium",
   },
 
   input: {
@@ -97,6 +99,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 8,
     padding: 8,
+    fontFamily: "Poppins-Medium",
   },
 
   textInput: {
@@ -104,6 +107,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '400',
     lineHeight: 24,
+    fontFamily: "Poppins-Medium",
   },
 
   buttonSignIn: {
@@ -137,6 +141,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 21,
+    fontFamily: "Poppins-Medium",
   },
 
   textButtonNew: {
@@ -144,6 +149,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 21,
+    fontFamily: "Poppins-Medium",
   },
 });
 
