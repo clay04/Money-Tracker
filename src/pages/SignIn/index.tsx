@@ -7,9 +7,8 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import SignUp from '../pages/SignUp';
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -24,6 +23,23 @@ const SignIn = () => {
   const handleSubmit = () => {
     console.log('Email:', email);
     console.log('Password: ', password);
+  };
+
+  const handleGoTO = (screen) => {
+    navigation.navigate(screen)
+  }
+
+  const ActionButton = () => {
+    return (
+      <View>
+        <TouchableOpacity style={styles.buttonSignIn} onPress={() => handleGoTO('Home')}>
+          <Text style={styles.textButtonSignIn}>Sign In</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonNew} onPress={() => handleGoTO('SignUp')}>
+          <Text style={styles.textButtonNew}>Create New Account</Text>
+        </TouchableOpacity>
+      </View>
+    );
   };
 
   return (
@@ -48,12 +64,7 @@ const SignIn = () => {
           value={password}
           onChangeText={handlePasswordChange}
         />
-        <TouchableOpacity style={styles.buttonSignIn} onPress={handleSubmit}>
-          <Text style={styles.textButtonSignIn}>Sign In</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonNew} onPress={handleSubmit}>
-          <Text style={styles.textButtonNew}>Create New Account</Text>
-        </TouchableOpacity>
+        <ActionButton />
       </ScrollView>
     </View>
   );
@@ -61,11 +72,11 @@ const SignIn = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#ffffff',
     flex: 1,
-    marginTop: 30,
-    marginLeft: 20,
-    marginRight: 20,
-    padding: 5,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 30,
     fontFamily: 'Poppins',
   },
 
