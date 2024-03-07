@@ -25,17 +25,21 @@ const SignIn = ({navigation}) => {
     console.log('Password: ', password);
   };
 
-  const handleGoTO = (screen) => {
-    navigation.navigate(screen)
-  }
+  const handleGoTO = screen => {
+    navigation.navigate(screen);
+  };
 
   const ActionButton = () => {
     return (
       <View>
-        <TouchableOpacity style={styles.buttonSignIn} onPress={() => handleGoTO('Home')}>
+        <TouchableOpacity
+          style={styles.buttonSignIn}
+          onPress={() => handleGoTO('Home')}>
           <Text style={styles.textButtonSignIn}>Sign In</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonNew} onPress={() => handleGoTO('SignUp')}>
+        <TouchableOpacity
+          style={styles.buttonNew}
+          onPress={() => handleGoTO('SignUp')}>
           <Text style={styles.textButtonNew}>Create New Account</Text>
         </TouchableOpacity>
       </View>
@@ -86,7 +90,7 @@ const styles = StyleSheet.create({
     color: '#020202',
     fontWeight: '500',
     marginBottom: 100,
-    fontFamily: "Poppins-Medium",
+    fontFamily: 'Poppins-Medium',
   },
 
   input: {
@@ -99,7 +103,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 8,
     padding: 8,
-    fontFamily: "Poppins-Medium",
+    fontFamily: 'Poppins-Medium',
   },
 
   textInput: {
@@ -107,7 +111,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '400',
     lineHeight: 24,
-    fontFamily: "Poppins-Medium",
+    fontFamily: 'Poppins-Medium',
   },
 
   buttonSignIn: {
@@ -141,7 +145,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 21,
-    fontFamily: "Poppins-Medium",
+    fontFamily: 'Poppins-Medium',
   },
 
   textButtonNew: {
@@ -149,7 +153,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 21,
-    fontFamily: "Poppins-Medium",
+    fontFamily: 'Poppins-Medium',
   },
 });
 

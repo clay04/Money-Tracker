@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 45,
     borderColor: '#ffffff',
+    fontFamily: 'Poppins-Medium',
   },
 
   textButton: {
@@ -63,5 +64,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 21,
+    fontFamily: 'Poppins-Medium',
   },
 });

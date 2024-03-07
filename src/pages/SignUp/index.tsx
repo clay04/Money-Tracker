@@ -78,9 +78,7 @@ const SignUp = () => {
         <TouchableOpacity style={styles.button} onPress={handleChoosePhoto}>
           <Text style={styles.textButton}>Choose Photo</Text>
         </TouchableOpacity>
-        {avatar && (
-          <Image source={avatar} style={{width: 100, height: 100}} />
-        )}
+        {avatar && <Image source={avatar} style={{width: 100, height: 100}} />}
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.textButton}>Continue</Text>
         </TouchableOpacity>
@@ -96,7 +94,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     padding: 5,
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins-Medium',
   },
 
   text2: {
@@ -104,6 +102,7 @@ const styles = StyleSheet.create({
     color: '#020202',
     fontWeight: '500',
     marginBottom: 100,
+    fontFamily: 'Poppins-Medium',
   },
 
   input: {
@@ -116,6 +115,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 8,
     padding: 8,
+    fontFamily: 'Poppins-Medium',
   },
 
   textInput: {
@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: '400',
     lineHeight: 24,
+    fontFamily: 'Poppins-Medium',
   },
 
   button: {
@@ -136,6 +137,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 45,
     borderColor: '#ffffff',
+    fontFamily: 'Poppins-Medium',
   },
 
   textButton: {
@@ -143,6 +145,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 21,
+    fontFamily: 'Poppins-Medium',
   },
 });
 
