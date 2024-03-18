@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React, { useEffect } from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import Dolar from '../../../assets/image/Dolar.svg';
+import Dolar from '../../assets/image/Dolar.svg';
 
 const SPLASH = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.replace('SignIn');
-    }, 4000);
+    }, 3000);
   });
 
   return (
