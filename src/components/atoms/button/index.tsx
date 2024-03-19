@@ -5,11 +5,12 @@ const index = ({
   label,
   backgroundColor = '#02CF8E',
   textColor = '#020202',
+  borderRadius = 8,
   onPress,
 }) => {
   return (
     <TouchableOpacity
-      style={styles.container(backgroundColor)}
+      style={styles.container(backgroundColor, borderRadius)}
       activeOpacity={0.7}
       onPress={onPress}>
       <Text style={styles.label(textColor)}>{label}</Text>
@@ -20,10 +21,10 @@ const index = ({
 export default index;
 
 const styles = StyleSheet.create({
-  container: backgroundColor => ({
+  container: (backgroundColor, borderRadius) => ({
     backgroundColor: backgroundColor,
     paddingVertical: 12,
-    borderRadius: 8,
+    borderRadius: borderRadius,
   }),
 
   label: textColor => ({

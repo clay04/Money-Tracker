@@ -16,8 +16,8 @@ const SignIn = ({navigation}) => {
         <Gap height={16} />
         <TextInput label="Password" placeholder="Type your password" />
         <Gap height={24} />
-        <Button label="Sign In" />
-        <Gap height="12" />
+        <Button label="Sign In" onPress={() => navigation.navigate('Home')} />
+        <Gap height={12} />
         <Button
           label="Add New Account"
           backgroundColor="#8D92A3"
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  contentWrapper: {
+  containerWrapper: {
     backgroundColor: '#FFFFFF',
     flex: 1,
     paddingHorizontal: 24,
