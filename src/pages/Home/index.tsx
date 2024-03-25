@@ -1,69 +1,102 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import { ScrollView, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { Button, Gap, PageHeader } from '../../components';
 
-const Home = ({navigation}) => {
-  const handleGoTO = screen => {
-    navigation.navigate(screen);
-  };
+const Home = ({ avatar, navigation }) => {
   return (
-    <View style={styles.container}>
+    <ScrollView>
       <View>
-        <Text>Money Tracker</Text>
-        <Text>Track Your Mony</Text>
+        <PageHeader label="Money Tracker" text="Track your money"/>
+        {avatar && (
+        <ImageBackground
+          source={avatar}
+          style={styles.profilePicture}
+        />
+        )}
+        <Gap height={24}/>
       </View>
-      <View>
-        <Text>Your Balance</Text>
+      <View style={styles.containerWrapper}>
+        <Text style={styles.text}>Your Balance</Text>
+        <Text style={styles.Rp}>Rp. 000.000.000</Text>
+        <Gap height={14} />
+        <View style={styles.garis}/>
+        <Gap height={14} />
+        <View style={styles.cash}>
+          <Text style={styles.textCash}>Cash on Hand</Text>
+          <Text style={styles.RpCash}>Rp. 0.000.000</Text>
+        </View>
+        <View style={styles.cash}>
+          <Text style={styles.textCash}>Cash on Bank</Text>
+          <Text style={styles.RpCash}>Rp. 0.000.000</Text>
+        </View>
+        <Gap height={50} />
       </View>
-      <View>
-        <Text>Cash on Hand</Text>
-        <Text>Cash on Bank</Text>
+      <Gap height={24} />
+      <View style={styles.containerWrapper}>
+      <Text style={styles.text}>Add Transaction</Text>
+        <Button label="Cash On Hand" onPress={() => navigation.navigate('CashOnHand')}/>
+        <Gap height={14} />
+        <Button label="Cash On Bank" onPress={() => navigation.navigate('CashOnBank')}/>
+        <Gap height={50} />
       </View>
-      <View>
-        <Text>Add Transaction</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleGoTO('CashOnHand')}>
-          <Text style={styles.textButton}>Cash On Hand</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleGoTO('CashOnBank')}>
-          <Text style={styles.textButton}>Cash On Bank</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    </ScrollView>
   );
 };
 
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {
+  profilePicture: {
+    width: 90,
+    height: 90,
+    borderRadius: 100,
+    overflow: 'hidden',
+  },
+
+  textHeader: {
+    color: '#020202',
+  },
+
+  text: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: 16,
+    color: '#000000'
+  },
+
+  containerWrapper: {
     padding: 20,
     backgroundColor: '#ffffff',
     flex: 1,
   },
 
-  button: {
-    color: 'red',
-    backgroundColor: '#02CF8E',
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-    borderRadius: 8,
-    width: '100%',
-    height: 45,
-    borderColor: '#ffffff',
-    fontFamily: 'Poppins-Medium',
+  Rp: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 24,
+    color: '#000000',
+    textAlign: 'center',
   },
 
-  textButton: {
-    color: '#020202',
-    fontSize: 14,
-    fontWeight: '500',
-    lineHeight: 21,
-    fontFamily: 'Poppins-Medium',
+  garis: {
+    borderWidth: 0.5,
+    borderBottomColor: '#000000'
   },
+
+  textCash: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    color: '#000000', 
+    width: 115,
+  },
+
+  RpCash: {
+    fontFamily: 'Poppins-Medium',
+    fontSize: 14,
+    color: '#000000',
+    marginLeft: 20,
+    textAlign: 'center',
+  },
+
+  cash: {
+    flexDirection: 'row', 
+  }
 });
