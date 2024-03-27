@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useEffect } from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import Dolar from '../../assets/image/Dolar.svg';
+import { Logo } from '../../assets/icon';
 
 const SPLASH = ({navigation}) => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const SPLASH = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Dolar/>
+      <Logo />
       <Text style={styles.text}>Money Tracker</Text>
     </View>
   );

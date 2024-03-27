@@ -1,25 +1,19 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, ImageBackground } from 'react-native';
-import { Button, Gap, PageHeader } from '../../components';
+import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import {Button, Gap, PageHeader} from '../../components';
 
-const Home = ({ avatar, navigation }) => {
+const Home = ({navigation}) => {
   return (
     <ScrollView>
       <View>
-        <PageHeader label="Money Tracker" text="Track your money"/>
-        {avatar && (
-        <ImageBackground
-          source={avatar}
-          style={styles.profilePicture}
-        />
-        )}
-        <Gap height={24}/>
+        <PageHeader label="Money Tracker" text="Track your money" type="withPhoto"/>
+        <Gap height={24} />
       </View>
       <View style={styles.containerWrapper}>
         <Text style={styles.text}>Your Balance</Text>
-        <Text style={styles.Rp}>Rp. 000.000.000</Text>
+        <Text style={styles.Rp}>Rp. 00.000.000</Text>
         <Gap height={14} />
-        <View style={styles.garis}/>
+        <View style={styles.garis} />
         <Gap height={14} />
         <View style={styles.cash}>
           <Text style={styles.textCash}>Cash on Hand</Text>
@@ -33,10 +27,16 @@ const Home = ({ avatar, navigation }) => {
       </View>
       <Gap height={24} />
       <View style={styles.containerWrapper}>
-      <Text style={styles.text}>Add Transaction</Text>
-        <Button label="Cash On Hand" onPress={() => navigation.navigate('CashOnHand')}/>
+        <Text style={styles.text}>Add Transaction</Text>
+        <Button
+          label="Cash On Hand"
+          onPress={() => navigation.navigate('CashOnHand')}
+        />
         <Gap height={14} />
-        <Button label="Cash On Bank" onPress={() => navigation.navigate('CashOnBank')}/>
+        <Button
+          label="Cash On Bank"
+          onPress={() => navigation.navigate('CashOnBank')}
+        />
         <Gap height={50} />
       </View>
     </ScrollView>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Poppins-Medium',
     fontSize: 16,
-    color: '#000000'
+    color: '#000000',
   },
 
   containerWrapper: {
@@ -78,13 +78,13 @@ const styles = StyleSheet.create({
 
   garis: {
     borderWidth: 0.5,
-    borderBottomColor: '#000000'
+    borderBottomColor: '#000000',
   },
 
   textCash: {
     fontFamily: 'Poppins-Regular',
     fontSize: 14,
-    color: '#000000', 
+    color: '#000000',
     width: 115,
   },
 
@@ -97,6 +97,6 @@ const styles = StyleSheet.create({
   },
 
   cash: {
-    flexDirection: 'row', 
-  }
+    flexDirection: 'row',
+  },
 });
