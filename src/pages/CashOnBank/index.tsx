@@ -1,42 +1,64 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, TextInput} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
+import {
+  Button,
+  Gap,
+  PageHeader,
+  TextInput,
+  Transaction,
+} from '../../components';
 
-const CashOnBank = () => {
+const CashOnHand = ({navigation}) => {
   return (
-    <View style={styles.container}>
-        <View>
-            <Text>Cash On Bank</Text>
-        </View>
-    </View>
+    <ScrollView style={styles.container}>
+      <PageHeader
+        label="Cash On Bank"
+        backButton={true}
+        onPress={() => navigation.navigate('Home')}
+      />
+      <Gap height={24} />
+      <View style={styles.containerWrapper}>
+        <Gap height={24} />
+        <TextInput label="Description" placeholder="Add the description" />
+        <Gap height={16} />
+        <TextInput label="Type" placeholder="Debit / Credit" />
+        <Gap height={24} />
+        <Button label="Save" />
+        <Gap height={50} />
+      </View>
+      <Gap height={24} />
+      <View style={styles.containerWrapper}>
+        <Transaction
+          label="Last 3 Transaction"
+          date="17 April 2024"
+          type="Water, Food"
+          cash="-Rp 300.000"
+        />
+        <Transaction
+          date="17 April 2024"
+          type="Water, Food"
+          cash="-Rp 300.000"
+        />
+        <Transaction
+          date="17 April 2024"
+          type="Water, Food"
+          cash="+Rp 300.000"
+        />
+      </View>
+    </ScrollView>
   );
 };
 
-export default CashOnBank;
+export default CashOnHand;
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 20,
-        backgroundColor: '#ffffff',
-        flex: 1,
-    },
+  container: {
+    flex: 1,
+  },
 
-    button: {
-        color: 'red',
-        backgroundColor: '#02CF8E',
-        borderWidth: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 20,
-        borderRadius: 8,
-        width: '100%',
-        height: 45,
-        borderColor: '#ffffff',
-      },
-
-      textButton: {
-        color: '#020202',
-        fontSize: 14,
-        fontWeight: '500',
-        lineHeight: 21,
-      },
+  containerWrapper: {
+    backgroundColor: '#FFFFFF',
+    flex: 1,
+    paddingHorizontal: 24,
+  },
 });
