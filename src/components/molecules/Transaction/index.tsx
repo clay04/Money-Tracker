@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Gap } from '../..'
 
 const Transaction = ({label, date, type, cash}) => {
   const cashColor = cash.includes('-') ? 'red' : 'green';
@@ -23,9 +22,9 @@ export default Transaction
 
 const styles = StyleSheet.create({
   label: {
-      fontFamily: 'Poppins-Bold',
-      color: '#020202',
-      fontSize: 16,
+    fontFamily: 'Poppins-Bold',
+    color: '#020202',
+    fontSize: 16,
   },
   ContainerWrapper: {
     padding: 25,

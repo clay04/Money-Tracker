@@ -28,6 +28,7 @@ const CashOnHand = ({navigation}) => {
       </View>
       <Gap height={24} />
       <View style={styles.containerWrapper}>
+        <Gap height={10} />
         <Transaction
           label="Last 3 Transaction"
           date="17 April 2024"
